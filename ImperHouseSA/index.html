@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImperHouse S.A. - Protege tu Hogar</title>
+    <meta name="description"
+        content="Servicios profesionales de impermeabilización en Guatemala. Protege tu hogar de la humedad y goteras con nuestros expertos.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Configuración personalizada de Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            light: '#E0F2F1', // Azul agua muy claro
+                            DEFAULT: '#0288D1', // Azul principal
+                            dark: '#01579B', // Azul oscuro
+                            accent: '#FF6D00', // Naranja para llamadas a la acción
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        body: ['Roboto', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 60%);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="font-body text-gray-700 antialiased overflow-x-hidden">
+
+    <!-- HEADER -->
+    <header class="bg-white shadow-md fixed w-full z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#inicio" class="flex items-center gap-3 group">
+                <img src="./assets/logo.jpg" alt="ImperHouse S.A."
+                    class="h-12 w-auto transition transform group-hover:scale-105">
+                <span class="text-xl font-bold text-brand-dark font-sans group-hover:text-brand transition">ImperHouse
+                    S.A.</span>
+            </a>
+
+            <!-- Navegación Desktop -->
+            <nav class="hidden md:flex space-x-8 items-center font-medium">
+                <a href="#inicio" class="text-gray-600 hover:text-brand transition">Inicio</a>
+                <a href="#servicios" class="text-gray-600 hover:text-brand transition">Servicios</a>
+                <a href="#promociones" class="text-gray-600 hover:text-brand transition">Promociones</a>
+                <a href="#contacto"
+                    class="px-5 py-2 bg-brand text-white rounded-full hover:bg-brand-dark transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                    Contacto
+                </a>
+            </nav>
+
+            <!-- Menú Móvil Botón -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-brand-dark focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+            <div class="flex flex-col p-4 space-y-3">
+                <a href="#inicio"
+                    class="block py-2 text-gray-700 hover:text-brand font-medium border-b border-gray-50">Inicio</a>
+                <a href="#servicios"
+                    class="block py-2 text-gray-700 hover:text-brand font-medium border-b border-gray-50">Servicios</a>
+                <a href="#promociones"
+                    class="block py-2 text-gray-700 hover:text-brand font-medium border-b border-gray-50">Promociones</a>
+                <a href="#contacto" class="block py-2 text-brand font-bold">¡Cotizar Ahora!</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative h-screen min-h-[600px] flex items-center text-white pt-16">
+        <!-- Imagen de fondo -->
+        <div class="absolute inset-0 z-0">
+            <img src="./assets/hero_bg.png" alt="Techo impermeabilizado" class="w-full h-full object-cover object-top">
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10 flex items-center h-full">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-6xl font-bold font-sans mb-4 leading-tight drop-shadow-lg text-white">
+                    IMPERMEABILIZACIÓN PROFESIONAL.<br>
+                    <span class="text-yellow-400">¡Protege tu Hogar!</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 font-light opacity-90 text-white">
+                    Soluciones garantizadas para mantener tu casa seca y segura en Mixco y Ciudad de Guatemala.
+                </p>
+                <div class="mt-8">
+                    <a href="#contacto"
+                        class="inline-block px-8 py-4 bg-brand-accent text-white text-lg font-bold rounded-lg shadow-lg hover:bg-orange-600 transition transform hover:scale-105 border-2 border-transparent hover:border-white">
+                        <i class="fa-solid fa-calculator mr-2"></i> Cotiza Ahora
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE SERVICIOS -->
+    <section id="servicios" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-brand font-bold tracking-wider uppercase text-sm">Nuestros Servicios</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2">¿Por qué impermeabilizar con nosotros?
+                </h2>
+                <div class="w-20 h-1 bg-brand mx-auto mt-4 rounded"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+                    La humedad puede causar daños estructurales graves. Nosotros ofrecemos una protección duradera con
+                    materiales de primera calidad.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Servicio 1 -->
+                <div
+                    class="p-8 bg-slate-50 rounded-2xl border border-slate-100 text-center transition duration-300 card-hover group">
+                    <div
+                        class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-md text-brand group-hover:bg-brand group-hover:text-white transition">
+                        <i class="fa-solid fa-cloud-showers-heavy text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Protección Total</h3>
+                    <p class="text-gray-600">Eliminamos filtraciones y humedad al 100%. Tu techo quedará blindado contra
+                        las lluvias más intensas.</p>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div
+                    class="p-8 bg-slate-50 rounded-2xl border border-slate-100 text-center transition duration-300 card-hover group">
+                    <div
+                        class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-md text-brand group-hover:bg-brand group-hover:text-white transition">
+                        <i class="fa-solid fa-fill-drip text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Sellado de Grietas</h3>
+                    <p class="text-gray-600">Reparación profunda de grietas y fisuras antes de aplicar el
+                        impermeabilizante para asegurar la adherencia.</p>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div
+                    class="p-8 bg-slate-50 rounded-2xl border border-slate-100 text-center transition duration-300 card-hover group">
+                    <div
+                        class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-md text-brand group-hover:bg-brand group-hover:text-white transition">
+                        <i class="fa-solid fa-shield-halved text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Garantía por Escrito</h3>
+                    <p class="text-gray-600">Ofrecemos garantías de 1, 3 y hasta 5 años en nuestros trabajos. Tu
+                        inversión está segura con nosotros.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE PROMOCIONES -->
+    <section id="promociones" class="py-20 bg-brand-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-brand-dark font-bold tracking-wider uppercase text-sm">Ofertas Especiales</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2">Paquetes de Impermeabilización</h2>
+                <div class="w-20 h-1 bg-brand mx-auto mt-4 rounded"></div>
+                <p class="mt-4 text-gray-600">Precios competitivos y materiales de la mejor calidad. ¡Aprovecha nuestras
+                    ofertas de temporada!</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Tarjeta 1: Básico (1 Año) -->
+                <div
+                    class="bg-white rounded-2xl shadow-lg overflow-hidden relative transform transition hover:-translate-y-2">
+                    <div class="p-6 text-center border-b border-gray-100">
+                        <h3 class="text-xl font-bold text-gray-700">Impermeabilizante Básico</h3>
+                        <p class="text-sm text-gray-500 mt-1">Duración 1 Año</p>
+                    </div>
+                    <div class="p-8 bg-gray-50 text-center">
+                        <div class="flex justify-center items-center gap-2 mb-2">
+                            <!-- <span class="text-gray-400 line-through text-lg">$140</span> -->
+                            <span class="text-4xl font-bold text-brand">Cotizar</span>
+                        </div>
+                        <p class="text-sm text-gray-500">Mantenimiento preventivo</p>
+                    </div>
+                    <div class="p-8">
+                        <ul class="space-y-3 mb-8 text-gray-600 text-sm">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-2"></i>
+                                Limpieza básica</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-2"></i> Sellado
+                                de grietas visibles</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-2"></i>
+                                Aplicación de capa protectora</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-2"></i> Ideal
+                                para retoques</li>
+                        </ul>
+                        <a href="https://wa.me/50230067562?text=Me%20interesa%20la%20oferta%20de%201%20a%C3%B1o"
+                            target="_blank"
+                            class="block w-full py-3 px-6 bg-white border-2 border-brand text-brand font-bold text-center rounded-lg hover:bg-brand hover:text-white transition">
+                            Aprovechar Oferta
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2: Estándar (3 Años) -->
+                <div
+                    class="bg-white rounded-2xl shadow-lg overflow-hidden relative transform transition hover:-translate-y-2">
+                    <div class="p-6 text-center border-b border-gray-100">
+                        <h3 class="text-xl font-bold text-gray-700">Impermeabilizante Acrílico</h3>
+                        <p class="text-sm text-gray-500 mt-1">Duración 3 Años</p>
+                    </div>
+                    <div class="p-8 bg-gray-50 text-center">
+                        <div class="flex justify-center items-center gap-2 mb-2">
+                            <!-- <span class="text-gray-400 line-through text-lg">$140</span> -->
+                            <span class="text-4xl font-bold text-brand">Q85</span>
+                        </div>
+                        <p class="text-sm text-gray-500">por m² (Aprox)</p>
+                    </div>
+                    <div class="p-8">
+                        <ul class="space-y-3 mb-8 text-gray-600 text-sm">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-2"></i>
+                                Limpieza profunda</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-2"></i> Sellado
+                                de grietas menores</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-2"></i> Doble
+                                capa de acrílico</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-2"></i>
+                                <strong>Garantía 3 años</strong>
+                            </li>
+                        </ul>
+                        <a href="https://wa.me/50230067562?text=Me%20interesa%20la%20oferta%20de%203%20a%C3%B1os"
+                            target="_blank"
+                            class="block w-full py-3 px-6 bg-white border-2 border-brand text-brand font-bold text-center rounded-lg hover:bg-brand hover:text-white transition">
+                            Aprovechar Oferta
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3: Premium (5 Años) -->
+                <div
+                    class="bg-white rounded-2xl shadow-xl overflow-hidden relative transform md:-translate-y-4 border-2 border-brand z-10">
+                    <div class="bg-brand text-white text-center py-1 text-xs font-bold uppercase tracking-wider">
+                        Más Popular
+                    </div>
+                    <div class="p-6 text-center border-b border-gray-100">
+                        <h3 class="text-2xl font-bold text-brand-dark">Fibratado 5 Años</h3>
+                        <p class="text-sm text-gray-500 mt-1">Máxima Protección</p>
+                    </div>
+                    <div class="p-8 bg-brand-light/30 text-center">
+                        <div class="flex justify-center items-center gap-2 mb-2">
+                            <!-- <span class="text-gray-400 line-through text-lg">$180</span> -->
+                            <span class="text-5xl font-bold text-brand-dark">Q110</span>
+                        </div>
+                        <p class="text-sm text-gray-500">por m² (Todo incluido)</p>
+                    </div>
+                    <div class="p-8">
+                        <ul class="space-y-3 mb-8 text-gray-600">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-2"></i> Refuerzo
+                                con microfibra</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-2"></i> Resanado
+                                profesional</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-2"></i> Malla de
+                                refuerzo en puntos críticos</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-2"></i>
+                                <strong>Garantía por escrito 5 años</strong>
+                            </li>
+                        </ul>
+                        <a href="https://wa.me/50230067562?text=Me%20interesa%20la%20oferta%20de%205%20a%C3%B1os"
+                            target="_blank"
+                            class="block w-full py-4 px-6 bg-brand-accent text-white font-bold text-center rounded-lg hover:bg-orange-600 transition shadow-lg hover:shadow-xl">
+                            ¡Lo Quiero!
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO / FOOTER -->
+    <footer id="contacto" class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <!-- Columna 1 -->
+                <div>
+                    <img src="./assets/logo.jpg" alt="ImperHouse S.A." class="h-12 w-auto bg-white rounded-lg p-1">
+                    <p class="text-gray-400 mb-6 font-light">
+                        Expertos en mantener tu hogar en Guatemala seco y seguro. Utilizamos los mejores materiales para
+                        garantizar tu tranquilidad.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand transition text-white">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand transition text-white">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Columna 2 -->
+                <div>
+                    <h4 class="text-xl font-bold mb-6 border-b border-gray-700 pb-2 inline-block">Contacto Rápido</h4>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-brand"></i>
+                            <span>Mixco, Guatemala</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-brand"></i>
+                            <span>+502 3006-7562</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-brand"></i>
+                            <span>+502 3006-7562</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-clock text-brand"></i>
+                            <span>Lun - Sab: 8:00 AM - 6:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3 -->
+                <div>
+                    <h4 class="text-xl font-bold mb-6 border-b border-gray-700 pb-2 inline-block">Áreas de Servicio</h4>
+                    <div class="flex flex-col gap-2 text-gray-300">
+                        <span class="flex items-center gap-2"><i class="fa-solid fa-map-pin text-sm text-brand"></i>
+                            Mixco</span>
+                        <span class="flex items-center gap-2"><i class="fa-solid fa-map-pin text-sm text-brand"></i>
+                            Col. Molino de Las Flores</span>
+                        <span class="flex items-center gap-2"><i class="fa-solid fa-map-pin text-sm text-brand"></i>
+                            Alrededores de Mixco</span>
+                        <span class="flex items-center gap-2"><i class="fa-solid fa-map-pin text-sm text-brand"></i>
+                            Ciudad de Guatemala</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2024 ImperHouse S.A. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/50230067562?text=Hola,%20me%20interesa%20agendar%20una%20cita%20para%20impermeabilizar"
+        target="_blank"
+        class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:bg-green-600 transition duration-300 z-50 animate-bounce group">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+        <!-- Tooltip -->
+        <span
+            class="absolute right-16 bg-white text-gray-800 text-xs font-bold px-3 py-2 rounded shadow-lg opacity-0 group-hover:opacity-100 transition duration-300 whitespace-nowrap pointer-events-none">
+            ¡Cotiza aquí!
+        </span>
+    </a>
+
+    <!-- Script simple para menú móvil -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú al hacer click en un enlace
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+
+</html>
